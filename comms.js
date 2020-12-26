@@ -1,6 +1,6 @@
-const config = require('./config.json'); // Подключаем файл с параметрами и информацией
+//const config = require('./config.json'); // Подключаем файл с параметрами и информацией
 const Discord = require('discord.js'); // Подключаем библиотеку discord.js
-const prefix = config.prefix; // «Вытаскиваем» префикс
+const prefix = process.env.PREFIX; // «Вытаскиваем» префикс
 
 // Команды //
 
