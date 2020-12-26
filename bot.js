@@ -3,7 +3,7 @@ const robot = new Discord.Client(); // Объявляем, что robot - бот
 const comms = require("./comms.js"); // Подключаем файл с командами для бота
 const fs = require('fs'); // Подключаем родной модуль файловой системы node.js
 let config = require('./config.json'); // Подключаем файл с параметрами и информацией
-let token = config.token; // «Вытаскиваем» из него токен
+let token = process.env.TOKEN; // «Вытаскиваем» из него токен
 let prefix = config.prefix; // «Вытаскиваем» из него префикс
 
 robot.on("ready", function() {
