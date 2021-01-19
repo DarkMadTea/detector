@@ -1,15 +1,17 @@
-//const config = require('./config.json'); // Подключаем файл с параметрами и информацией
+const config = require('./config.json'); // Подключаем файл с параметрами и информацией
 const Discord = require('discord.js'); // Подключаем библиотеку discord.js
-const prefix = process.env.PREFIX; // «Вытаскиваем» префикс
+const prefix = config.prefix; // «Вытаскиваем» префикс
 
 // Команды //
 
 function test(robot, mess, args) {
     let randomPer = mess.guild.members.cache.random().user;
-    mess.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-    mess.channel.send('Ведется поиск в базе данных');
-    mess.channel.send('Ведется захват подозреваемого');
-    mess.channel.send('И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - ' + `${randomPer}`)
+    console.log(randomPer);
+    mess.channel.send('console logged');
+    // mess.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+    // mess.channel.send('Ведется поиск в базе данных');
+    // mess.channel.send('Ведется захват подозреваемого');
+    // mess.channel.send('И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - ' + `${randomPer}`)
 }
 
 
