@@ -4,10 +4,6 @@ const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
 
-robot.on("ready", function() {
-    console.log(robot.user.username + " запустился!");
-});
-
 robot.on('message', msg => {
 
     var array = fs.readFileSync('users.txt').toString().split("\n");
