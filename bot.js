@@ -1,31 +1,19 @@
 const Discord = require('discord.js');
+var fs = require('fs');
 const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
 
-// robot.on("ready", function() {
-//     console.log(robot.user.username + " запустился!");
-// });
-
-//id of pidors role = 797546408496332800
+robot.on("ready", function() {
+    console.log(robot.user.username + " запустился!");
+});
 
 robot.on('message', msg => {
 
-    let arr = [ "365188528881008640", "267389822715297793", "527986206861033492",
-                "337342638867087360", "234766661943689216", "305414938715750410",
-                "200100239959392256", "349589505147404289", "284037375322226689",
-                "356805341515874304"];
-
-    // let arr = ["<@365188528881008640>", "<@267389822715297793>", "<@527986206861033492>",
-    //     "<@337342638867087360>", "<@234766661943689216>", "<@305414938715750410>",
-    //     "<@200100239959392256>", "<@349589505147404289>", "<@284037375322226689>",
-    //     "<@356805341515874304>"];
-
-    let item = arr[Math.floor(Math.random()*arr.length)];
-
+    var array = fs.readFileSync('users.txt').toString().split("\n");
+    let item = array[Math.floor(Math.random()*arr.length)];
 
     let roleID = "797546408496332800";
-
 
     if (msg.content === prefix + 'ктопидор') {
 
