@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const robot = new Discord.Client();
 const fs = require('fs');
-// let config = require('./config.json');
+let config = require('./config.json');
 // let token = config.token;
 let prefix = config.prefix;
 
