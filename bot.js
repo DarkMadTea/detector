@@ -6,6 +6,14 @@ let prefix = config.prefix;
 
 robot.on('message', msg => {
 
+    robot.user.setPresence({
+        status: 'online',
+        activity: {
+            type: 'WATCHING',
+            name: 'кто тут пидор',
+        },
+    });
+
     var array = fs.readFileSync('users.txt').toString().split("\n");
     let item = array[Math.floor(Math.random()*array.length)];
 
