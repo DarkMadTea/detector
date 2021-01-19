@@ -14,7 +14,16 @@ robot.on('message', msg => {
         },
     });
 
-    var array = fs.readFileSync('users.txt').toString().split("\n");
+    let nervID = "503098565485133834";
+    let mineID = "801185595468152852";
+
+    let usersOfServer = 'users.txt';
+
+    if (msg.guild.id == mineID){
+        usersOfServer = 'users1.txt'
+    }
+    var array = fs.readFileSync(usersOfServer).toString().split("\n");
+    console.log(array);
     let item = array[Math.floor(Math.random()*array.length)];
 
     let roleID = "797546408496332800";
@@ -28,10 +37,10 @@ robot.on('message', msg => {
         //     }
         // }
 
-        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-        msg.channel.send('Ведется поиск в базе данных');
-        msg.channel.send('Ведется захват подозреваемого');
-        msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
+        // msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+        // msg.channel.send('Ведется поиск в базе данных');
+        // msg.channel.send('Ведется захват подозреваемого');
+        // msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
 
         // if(msg.guild.members.cache.has(item)){
         //     msg.guild.members.cache.get(item)
