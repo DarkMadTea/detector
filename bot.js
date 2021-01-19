@@ -2,10 +2,8 @@ const Discord = require('discord.js');
 const robot = new Discord.Client();
 const fs = require('fs');
 let config = require('./config.json');
-// let token = config.token;
+let token = config.token;
 let prefix = config.prefix;
-
-let token = precess.env.TOKEN;
 
 robot.on("ready", function() {
     console.log(robot.user.username + " запустился!");
