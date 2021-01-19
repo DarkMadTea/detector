@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var fs = require('fs');
+let fs = require('fs');
 const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
