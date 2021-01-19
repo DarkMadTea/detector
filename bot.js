@@ -37,10 +37,10 @@ robot.on('message', msg => {
         //     }
         // }
 
-        // msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-        // msg.channel.send('Ведется поиск в базе данных');
-        // msg.channel.send('Ведется захват подозреваемого');
-        // msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
+        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+        msg.channel.send('Ведется поиск в базе данных');
+        msg.channel.send('Ведется захват подозреваемого');
+        msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
 
         // if(msg.guild.members.cache.has(item)){
         //     msg.guild.members.cache.get(item)
