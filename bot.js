@@ -11,7 +11,7 @@ robot.on("ready", function() {
 robot.on('message', msg => {
 
     var array = fs.readFileSync('users.txt').toString().split("\n");
-    let item = array[Math.floor(Math.random()*arr.length)];
+    let item = array[Math.floor(Math.random()*array.length)];
 
     let roleID = "797546408496332800";
 
