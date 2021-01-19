@@ -5,7 +5,7 @@ const fs = require('fs');
 // let token = config.token;
 let prefix = config.prefix;
 
-let token = precces.env.TOKEN;
+let token = precess.env.TOKEN;
 
 robot.on("ready", function() {
     console.log(robot.user.username + " запустился!");
