@@ -1,13 +1,11 @@
 const Discord = require('discord.js');
 const robot = new Discord.Client();
-const fs = require('fs');
 let config = require('./config.json');
-let token = config.token;
 let prefix = config.prefix;
 
-robot.on("ready", function() {
-    console.log(robot.user.username + " запустился!");
-});
+// robot.on("ready", function() {
+//     console.log(robot.user.username + " запустился!");
+// });
 
 //id of pidors role = 797546408496332800
 
