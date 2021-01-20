@@ -15,11 +15,11 @@ robot.on('message', msg => {
     });
 
     let nervID = "503098565485133834";
-    let mineID = "801185595468152852";
+    let bratvaID = "311147386225295361";
 
     let usersOfServer = 'users.txt';
 
-    if (msg.guild.id === mineID){
+    if (msg.guild.id === bratvaID){
         usersOfServer = 'users1.txt'
     }
     var array = fs.readFileSync(usersOfServer).toString().split("\n");
