@@ -57,17 +57,7 @@ robot.on('message', msg => {
     if (msg.content === 'Мариаза!') {
         msg.channel.send('Кнопкаa!');
     }
-
-    if (msg.guild.id === bratvaID){
-        if ((msg.content === '!play') || (msg.content === 'right') || (msg.content === 'Right')){
-            setTimeout(function () {
-                msg.channel.send('YES, SIR');
-                msg.channel.send('Let the cum begins!');
-                msg.channel.send('https://tenor.com/view/gachi-gachi-hyper-gif-15959866');
-            }, 1000);
-        }
-    }
-
+    
     if (msg.content === '-play https://www.youtube.com/playlist?list=PLofa8IMwGJo1le-DVlYyw93aCc4_Ik3mc'){
         setTimeout(function () {
             msg.channel.send('YES, SIR');
