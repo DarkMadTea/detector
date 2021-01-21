@@ -50,6 +50,11 @@ robot.on('message', msg => {
 
     }
 
+    if ( ((msg.content.match(/Выбил/)) || (msg.content.match(/выбил/))) && (msg.guild.id === nervID)){
+        msg.channel.send('You\'re fucking rich');
+        msg.channel.send('https://tenor.com/view/stocks-only-go-up-sogu-hulk-penis-stonks-v-shape-recovery-gif-18971989');
+    }
+
     if (msg.content === 'Кнопка!') {
         msg.channel.send('Мариааааазааааа!');
     }
@@ -57,7 +62,7 @@ robot.on('message', msg => {
     if (msg.content === 'Мариаза!') {
         msg.channel.send('Кнопкаa!');
     }
-    
+
     if (msg.content === '-play https://www.youtube.com/playlist?list=PLofa8IMwGJo1le-DVlYyw93aCc4_Ik3mc'){
         setTimeout(function () {
             msg.channel.send('YES, SIR');
