@@ -6,6 +6,7 @@ let prefix = config.prefix;
 
 robot.on('guildMemberAdd', (member) =>{
     member.roles.add('662290251263377408');
+    console.log("The role has beed added t0 " + member);
 });
 
 robot.on('message', msg => {
