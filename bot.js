@@ -36,7 +36,7 @@ robot.on('message', msg => {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
-    let randomMsg = getRandomInt(2);
+    let randomMsg = getRandomInt(3);
 
     if (msg.content === prefix + 'ктопидор') {
 
