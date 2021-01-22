@@ -32,19 +32,32 @@ robot.on('message', msg => {
 
     let roleID = "797546408496332800";
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    let randomMsg = getRandomInt(2);
+
     if (msg.content === prefix + 'ктопидор') {
 
+        if (randomMsg === '0'){
+            msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+            msg.channel.send('Ведется поиск в базе данных');
+            msg.channel.send('Ведется захват подозреваемого');
+            msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
+        }
+
+        if (randomMsg ==='1'){
+            msg.channel.send('Выезжаю на место...');
+            msg.channel.send('Но кто же он?');
+            msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item}>`);
+        }
         // for (let i = 0; i < arr.length; i++){
         //     if (msg.member.roles.cache.find(r => r.id === roleID)){
         //         msg.member.roles.remove(roleID);
         //         console.log("The role has beed removed")
         //     }
         // }
-
-        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-        msg.channel.send('Ведется поиск в базе данных');
-        msg.channel.send('Ведется захват подозреваемого');
-        msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
 
         // if(msg.guild.members.cache.has(item)){
         //     msg.guild.members.cache.get(item)
