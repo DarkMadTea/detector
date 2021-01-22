@@ -4,6 +4,10 @@ const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
 
+robot.on('guildMemberAdd', (member) =>{
+    member.roles.add('662290251263377408');
+});
+
 robot.on('message', msg => {
 
     robot.user.setPresence({
