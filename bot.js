@@ -27,7 +27,6 @@ robot.on('message', msg => {
         usersOfServer = 'users1.txt'
     }
     var array = fs.readFileSync(usersOfServer).toString().split("\n");
-    console.log(array);
     let item = array[Math.floor(Math.random()*array.length)];
 
     let roleID = "797546408496332800";
