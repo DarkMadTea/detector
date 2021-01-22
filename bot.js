@@ -6,7 +6,7 @@ let prefix = config.prefix;
 
 robot.on('guildMemberAdd', (member) =>{
     member.roles.add('662290251263377408');
-    console.log("The role has beed added t0 " + member);
+    console.log("The role has beed added to " + member);
 });
 
 robot.on('message', msg => {
@@ -67,7 +67,23 @@ robot.on('message', msg => {
         msg.channel.send('Кнопкаa!');
     }
 
-    if (msg.content === '-play https://www.youtube.com/playlist?list=PLofa8IMwGJo1le-DVlYyw93aCc4_Ik3mc'){
+    if (msg.guild.id === bratvaID){
+        if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) || (msg.content.match(/!play/)) || (msg.content.match(/!Play/))){
+            setTimeout(function () {
+                msg.channel.send('YES, SIR');
+                msg.channel.send('Let the cum begins!');
+                msg.channel.send('https://tenor.com/view/gachi-gachi-hyper-gif-15959866');
+            }, 500);
+        }
+    }
+    if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) || (msg.content.match(/!play/)) || (msg.content.match(/!Play/))){
+
+    }
+    
+    if ((msg.content === '-play https://www.youtube.com/playlist?list=PLofa8IMwGJo1le-DVlYyw93aCc4_Ik3mc')
+            || (msg.content.match(/right/))
+            || (msg.content.match(/version/))
+            || (msg.content.match(/гачи/))){
         setTimeout(function () {
             msg.channel.send('YES, SIR');
             msg.channel.send('Let the cum begins!');
