@@ -40,14 +40,14 @@ robot.on('message', msg => {
 
     if (msg.content === prefix + 'ктопидор') {
 
-        if (randomMsg === '0'){
+        if (randomMsg === 0){
             msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
             msg.channel.send('Ведется поиск в базе данных');
             msg.channel.send('Ведется захват подозреваемого');
             msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
         }
 
-        if (randomMsg ==='1'){
+        if (randomMsg === 1){
             msg.channel.send('Выезжаю на место...');
             msg.channel.send('Но кто же он?');
             msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item}>`);
