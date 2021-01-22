@@ -36,7 +36,7 @@ robot.on('message', msg => {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
-    let randomMsg = getRandomInt(3);
+    let randomMsg = getRandomInt(4);
 
     if (msg.content === prefix + 'ктопидор') {
 
@@ -60,6 +60,14 @@ robot.on('message', msg => {
             msg.channel.send('https://cdn.discordapp.com/attachments/801187240717975562/802299379620642856/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
             msg.channel.send(`Пидор пойман! Им оказался - <@${item}>`);
         }
+
+        if (randomMsg === 3){
+            msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+            msg.channel.send('Система поиска пидорасов активирована...');
+            msg.channel.send(`<@${item}>,`);
+            msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
+        }
+
         // for (let i = 0; i < arr.length; i++){
         //     if (msg.member.roles.cache.find(r => r.id === roleID)){
         //         msg.member.roles.remove(roleID);
