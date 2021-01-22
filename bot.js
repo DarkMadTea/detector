@@ -48,6 +48,7 @@ robot.on('message', msg => {
         }
 
         if (randomMsg === 1){
+            msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
             msg.channel.send('Выезжаю на место...');
             msg.channel.send('Но кто же он?');
             msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item}>`);
