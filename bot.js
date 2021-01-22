@@ -68,7 +68,8 @@ robot.on('message', msg => {
     }
 
     if (msg.guild.id === bratvaID){
-        if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) || (msg.content.match(/!play/)) || (msg.content.match(/!Play/))){
+        if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) ||
+             (msg.content.match(/Right/)) || (msg.content.match(/Version/)) || (msg.content.match(/Гачи/))) {
             setTimeout(function () {
                 msg.channel.send('YES, SIR');
                 msg.channel.send('Let the cum begins!');
