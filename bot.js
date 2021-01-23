@@ -7,7 +7,7 @@ let prefix = config.prefix;
 robot.on('guildMemberAdd', (member) =>{
     let mainChannel = robot.channels.cache.find(channel => channel.name === "центральная-догма");
     mainChannel.send(`Welcome to the club, buddy ${member} :3`);
-    mainChannel.send('https://tenor.com/view/gachireverse-gif-19575380');
+    mainChannel.send('https://tenor.com/view/billy-herrington-gachi-hunk-smile-gif-12492957');
     member.roles.add('662290251263377408');
     console.log("The role has beed added to " + member);
 });
