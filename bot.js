@@ -64,7 +64,7 @@ robot.on('message', msg => {
         if (randomMsg === 2){
             msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
             msg.channel.send('Ведется погоня за пидорасом...');
-            msg.channel.send('https://cdn.discordapp.com/attachments/801187240717975562/802299379620642856/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
+            msg.channel.send('https://cdn.discordapp.com/attachments/797547926137077760/804486649018712104/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
             msg.channel.send(`Пидор пойман! Им оказался - <@${item}>`);
         }
 
