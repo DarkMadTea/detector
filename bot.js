@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const request = require('request-promise');
+const request = require('request');
 let fs = require('fs');
 const robot = new Discord.Client();
 let config = require('./config.json');
