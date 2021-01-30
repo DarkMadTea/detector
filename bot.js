@@ -46,39 +46,39 @@ robot.on('message', msg => {
                 let array = [];
                 array = response.data.split("\n");
                 let item = array[Math.floor(Math.random()*array.length)];
-
+                msg.channel.send("asd"+item +"aad");
                 if (randomMsg === 0){
                     msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                     msg.channel.send('Ведется поиск в базе данных');
                     msg.channel.send('Ведется захват подозреваемого');
-                    msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item}>`);
+                    msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item.replace(/\r|\n/g, '')}>`);
                 }
 
                 if (randomMsg === 1){
                     msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                     msg.channel.send('Выезжаю на место...');
                     msg.channel.send('Но кто же он?');
-                    msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item}>`);
+                    msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item.replace(/\r|\n/g, '')}>`);
                 }
 
                 if (randomMsg === 2){
                     msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                     msg.channel.send('Ведется погоня за пидорасом...');
                     msg.channel.send('https://cdn.discordapp.com/attachments/797547926137077760/804486649018712104/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
-                    msg.channel.send(`Пидор пойман! Им оказался - <@${item}>`);
+                    msg.channel.send(`Пидор пойман! Им оказался - <@${item.replace(/\r|\n/g, '')}>`);
                 }
 
                 if (randomMsg === 3){
                     msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                     msg.channel.send('Система поиска пидорасов активирована...');
-                    msg.channel.send(`<@${item}>,`);
+                    msg.channel.send(`<@${item.replace(/\r|\n/g, '')}>,`);
                     msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
                 }
                 if (randomMsg === 4){
                     msg.channel.send('Инициирую поиск пидора дня...');
                     msg.channel.send('Машины выехали');
                     msg.channel.send('Так-так, что же тут у нас...');
-                    msg.channel.send(`Вот ты и пидор, <@${item}>,`);
+                    msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>,`);
                 }
             });
             // var array = fs.readFileSync(response).toString().split("\n");
