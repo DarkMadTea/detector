@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const request = require('./request');
 let fs = require('fs');
+const axios = require('axios').default;
 const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
@@ -41,9 +42,10 @@ robot.on('message', msg => {
     let randomMsg = getRandomInt(5);
 
     if (msg.content === prefix + 'ктопидор') {
-        request.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var array = fs.readFileSync(body).toString().split("\n");
+        axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
+            .then(function (response) {
+                let array = [];
+                array.push(response.data);
                 let item = array[Math.floor(Math.random()*array.length)];
 
                 if (randomMsg === 0){
@@ -79,9 +81,8 @@ robot.on('message', msg => {
                     msg.channel.send('Так-так, что же тут у нас...');
                     msg.channel.send(`Вот ты и пидор, <@${item}>,`);
                 }
-
-            }
-        });
+            });
+            // var array = fs.readFileSync(response).toString().split("\n");
     }
 
     if ( ((msg.content.match(/Выбил/)) || (msg.content.match(/выбил/))) && (msg.guild.id === nervID)){
