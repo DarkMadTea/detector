@@ -1,1 +1,1 @@
-worker: pm2 start ecosystem.config.js
+worker: node bot.js
