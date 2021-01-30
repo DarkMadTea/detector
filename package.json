@@ -9,10 +9,10 @@
   "author": "Mad_Tea",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord-rich-presence": "0.0.8",
     "discord.js": "^12.5.1",
-    "node-fetch": "^2.6.1",
-    "axios": "latest"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@octokit/rest": "^18.0.12",
