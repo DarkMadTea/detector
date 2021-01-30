@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const request = require('./request/request.js');
+const request = require('./request');
 let fs = require('fs');
 const robot = new Discord.Client();
 let config = require('./config.json');
@@ -43,8 +43,7 @@ robot.on('message', msg => {
     if (msg.content === prefix + 'ктопидор') {
         request.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer, function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                var csv = body;
-                var array = fs.readFileSync(csv).toString().split("\n");
+                var array = fs.readFileSync(body).toString().split("\n");
                 let item = array[Math.floor(Math.random()*array.length)];
 
                 if (randomMsg === 0){
