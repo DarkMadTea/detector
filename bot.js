@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const request = require('./request');
-let fs = require('fs');
+//let fs = require('fs');
 const axios = require('axios').default;
 const robot = new Discord.Client();
 let config = require('./config.json');
