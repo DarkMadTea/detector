@@ -43,7 +43,7 @@ robot.on('message', msg => {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
-    let randomMsg = getRandomInt(4);
+    let randomMsg = getRandomInt(5);
 
     if (msg.content === prefix + 'ктопидор') {
 
@@ -73,6 +73,12 @@ robot.on('message', msg => {
             msg.channel.send('Система поиска пидорасов активирована...');
             msg.channel.send(`<@${item}>,`);
             msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
+        }
+        if (randomMsg === 4){
+            msg.channel.send('Инициирую поиск пидора дня...');
+            msg.channel.send('Машины выехали');
+            msg.channel.send('Так-так, что же тут у нас...');
+            msg.channel.send(`Вот ты и пидор, <@${item}>,`);
         }
 
         // for (let i = 0; i < arr.length; i++){
@@ -104,7 +110,7 @@ robot.on('message', msg => {
     }
 
     // if (msg.guild.id === bratvaID){
-    //     if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) ||
+    //     if ( (msg.content.match("!play " + /right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) ||
     //          (msg.content.match(/Right/)) || (msg.content.match(/Version/)) || (msg.content.match(/Гачи/))) {
     //         setTimeout(function () {
     //             msg.channel.send('YES, SIR');
@@ -112,9 +118,6 @@ robot.on('message', msg => {
     //             msg.channel.send('https://tenor.com/view/gachi-gachi-hyper-gif-15959866');
     //         }, 500);
     //     }
-    // }
-    // if ( (msg.content.match(/right/)) || (msg.content.match(/version/)) || (msg.content.match(/гачи/)) || (msg.content.match(/!play/)) || (msg.content.match(/!Play/))){
-    //
     // }
     
     if ((msg.content === '-play https://www.youtube.com/playlist?list=PLofa8IMwGJo1le-DVlYyw93aCc4_Ik3mc')
