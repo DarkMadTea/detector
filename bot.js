@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
+const request = require('request');
 let fs = require('fs');
 const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
-let request = require('request');
 
 robot.on('guildMemberAdd', (member) =>{
     if (member.guild.id === '503098565485133834'){
