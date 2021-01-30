@@ -46,7 +46,6 @@ robot.on('message', msg => {
                 let array = [];
                 array = response.data.split("\n");
                 let item = array[Math.floor(Math.random()*array.length)];
-                msg.channel.send("asd"+item +"aad");
                 if (randomMsg === 0){
                     msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                     msg.channel.send('Ведется поиск в базе данных');
