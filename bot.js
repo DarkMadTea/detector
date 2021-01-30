@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 //let fs = require('fs');
-const axios = require('axios');
+const axios = require('./axios');
 const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
