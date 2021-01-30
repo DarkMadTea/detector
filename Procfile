@@ -1,1 +1,1 @@
-worker: npm i axios && node bot.js
+node bot.js
