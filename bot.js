@@ -44,7 +44,7 @@ robot.on('message', msg => {
         axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
             .then(function (response) {
                 let array = [];
-                array.push(response.data);
+                array = response.data.split("\n");
                 let item = array[Math.floor(Math.random()*array.length)];
 
                 if (randomMsg === 0){
