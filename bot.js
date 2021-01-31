@@ -38,7 +38,7 @@ robot.on('message', msg => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
-    let randomMsg = getRandomInt(5);
+    let randomMsg = getRandomInt(6);
 
     if (msg.content === prefix + 'ктопидор') {
         axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
@@ -78,6 +78,9 @@ robot.on('message', msg => {
                     msg.channel.send('Машины выехали');
                     msg.channel.send('Так-так, что же тут у нас...');
                     msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>,`);
+                }
+                if (randomMsg === 5){
+                    msg.channel.send(`А пидор сегодня - <@${item.replace(/\r|\n/g, '')}>,`);
                 }
             });
             // var array = fs.readFileSync(response).toString().split("\n");
