@@ -5,8 +5,12 @@ const robot = new Discord.Client();
 let config = require('./config.json');
 let prefix = config.prefix;
 
+let nervID = "503098565485133834";
+let bratvaID = "311147386225295361";
+
+
 robot.on('guildMemberAdd', (member) =>{
-    if (member.guild.id === '503098565485133834'){
+    if (member.guild.id === nervID){
         let mainChannel = robot.channels.cache.find(channel => channel.name === "центральная-догма");
         mainChannel.send(`Welcome to the club, buddy ${member} :3`);
         mainChannel.send('https://tenor.com/view/billy-herrington-gachi-hunk-smile-gif-12492957');
@@ -26,9 +30,6 @@ robot.on('message', msg => {
             name: 'кто тут пидор',
         },
     });
-
-    let nervID = "503098565485133834";
-    let bratvaID = "311147386225295361";
 
     let usersOfServer = 'users.txt';
     if (msg.guild.id === bratvaID){
@@ -92,7 +93,7 @@ robot.on('message', msg => {
     }
 
     if (msg.content === 'Кнопка!') {
-        msg.channel.send('Мариааааазааааа!');
+        msg.channel.send('Мариаааза!');
     }
 
     if (msg.content === 'Мариаза!') {
