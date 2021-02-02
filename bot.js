@@ -25,8 +25,8 @@ let typeOfAnswers;
 
 robot.on('message', msg => {
 
-    if (msg.channel.type == 'dm') {
-        if (msg.author.id == '365188528881008640') {
+    if (msg.channel.type === 'dm') {
+        if (msg.author.id === '365188528881008640') {
             if (msg.content === 'help' ){
                 msg.channel.send(`
                 These are my supported commands:
