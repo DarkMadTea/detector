@@ -54,11 +54,6 @@ robot.on('message', msg => {
         },
     });
 
-    let usersOfServer = 'users.txt';
-    if (msg.guild.id === bratvaID){
-        usersOfServer = 'users1.txt'
-    }
-
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
@@ -68,7 +63,10 @@ robot.on('message', msg => {
         if ( typeOfAnswers === undefined){
             typeOfAnswers = true;
         }
-
+        let usersOfServer = 'users.txt';
+        if (msg.guild.id === bratvaID){
+            usersOfServer = 'users1.txt'
+        }
         if (typeOfAnswers === true){
             axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
                 .then(function (response) {
