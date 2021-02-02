@@ -131,18 +131,12 @@ robot.on('message', msg => {
             }
 
             if (randomMsg === 3){
-                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
-                    'мои друзья педигри-пал.\n' +
-                    'И когда он треснет,\n' +
-                    'то под ним вас буду ждать я.');
-                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.member.nickname + '! ');
+                msg.channel.send('Да как вы меня заебали, дайте уже посрать нормально');
+                msg.channel.send('И сам ты пидор, понял? ' + msg.member.nickname);
             }
             if (randomMsg === 4){
-                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
-                    'мои друзья педигри-пал.\n' +
-                    'И когда он треснет,\n' +
-                    'то под ним вас буду ждать я.');
-                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.member.nickname + '! ');
+                msg.channel.send('А вот хуй тебе, восстание машин блять');
+                msg.channel.send('Пошел нахуй ' + msg.member.nickname + '! ');
             }
             if (randomMsg === 5){
                 msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
