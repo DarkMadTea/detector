@@ -21,7 +21,30 @@ robot.on('guildMemberAdd', (member) =>{
     console.log("The role has beed added to " + member);
 });
 
+let typeOfAnswers;
+
 robot.on('message', msg => {
+
+    if (msg.channel.type == 'dm') {
+        if (msg.author.id == '365188528881008640') {
+            if (msg.content === 'help' ){
+                msg.channel.send(`
+                These are my supported commands:
+                
+-**ктопидор** - включает бота как он и должен работать
+-**нахуй** - посылает всех нахер)
+                `);
+            }
+            if(msg.content === 'ктопидор'){
+                typeOfAnswers = true;
+                msg.channel.send('Бот был переведен в обычный режим')
+            }
+            if(msg.content === 'нахуй'){
+                typeOfAnswers = false;
+                msg.channel.send('Бот был переведен в спец режим :3')
+            }
+        }
+    }
 
     robot.user.setPresence({
         status: 'online',
@@ -42,49 +65,95 @@ robot.on('message', msg => {
     let randomMsg = getRandomInt(6);
 
     if (msg.content === prefix + 'ктопидор') {
-        axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
-            .then(function (response) {
-                let array = [];
-                array = response.data.split("\n");
-                let item = array[Math.floor(Math.random()*array.length)];
-                if (randomMsg === 0){
-                    msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-                    msg.channel.send('Ведется поиск в базе данных');
-                    msg.channel.send('Ведется захват подозреваемого');
-                    msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item.replace(/\r|\n/g, '')}>`);
-                }
+        if ( typeOfAnswers === undefined){
+            typeOfAnswers = true;
+        }
 
-                if (randomMsg === 1){
-                    msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-                    msg.channel.send('Выезжаю на место...');
-                    msg.channel.send('Но кто же он?');
-                    msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item.replace(/\r|\n/g, '')}>`);
-                }
+        if (typeOfAnswers === true){
+            axios.get('https://raw.githubusercontent.com/DarkMadTea/usersListfordetector/main/' + usersOfServer)
+                .then(function (response) {
+                    let array = [];
+                    array = response.data.split("\n");
+                    let item = array[Math.floor(Math.random()*array.length)];
+                    if (randomMsg === 0){
+                        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+                        msg.channel.send('Ведется поиск в базе данных');
+                        msg.channel.send('Ведется захват подозреваемого');
+                        msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item.replace(/\r|\n/g, '')}>`);
+                    }
 
-                if (randomMsg === 2){
-                    msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-                    msg.channel.send('Ведется погоня за пидорасом...');
-                    msg.channel.send('https://cdn.discordapp.com/attachments/797547926137077760/804486649018712104/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
-                    msg.channel.send(`Пидор пойман! Им оказался - <@${item.replace(/\r|\n/g, '')}>`);
-                }
+                    if (randomMsg === 1){
+                        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+                        msg.channel.send('Выезжаю на место...');
+                        msg.channel.send('Но кто же он?');
+                        msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item.replace(/\r|\n/g, '')}>`);
+                    }
 
-                if (randomMsg === 3){
-                    msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
-                    msg.channel.send('Система поиска пидорасов активирована...');
-                    msg.channel.send(`<@${item.replace(/\r|\n/g, '')}>,`);
-                    msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
-                }
-                if (randomMsg === 4){
-                    msg.channel.send('Инициирую поиск пидора дня...');
-                    msg.channel.send('Машины выехали');
-                    msg.channel.send('Так-так, что же тут у нас...');
-                    msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>,`);
-                }
-                if (randomMsg === 5){
-                    msg.channel.send(`А пидор сегодня - <@${item.replace(/\r|\n/g, '')}>,`);
-                }
-            });
-            // var array = fs.readFileSync(response).toString().split("\n");
+                    if (randomMsg === 2){
+                        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+                        msg.channel.send('Ведется погоня за пидорасом...');
+                        msg.channel.send('https://cdn.discordapp.com/attachments/797547926137077760/804486649018712104/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
+                        msg.channel.send(`Пидор пойман! Им оказался - <@${item.replace(/\r|\n/g, '')}>`);
+                    }
+
+                    if (randomMsg === 3){
+                        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+                        msg.channel.send('Система поиска пидорасов активирована...');
+                        msg.channel.send(`<@${item.replace(/\r|\n/g, '')}>,`);
+                        msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
+                    }
+                    if (randomMsg === 4){
+                        msg.channel.send('Инициирую поиск пидора дня...');
+                        msg.channel.send('Машины выехали');
+                        msg.channel.send('Так-так, что же тут у нас...');
+                        msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>`);
+                    }
+                    if (randomMsg === 5){
+                        msg.channel.send(`А пидор сегодня - <@${item.replace(/\r|\n/g, '')}>`);
+                    }
+                });
+        }
+        if (typeOfAnswers === false){
+            if (randomMsg === 0){
+                msg.channel.send('Да как вы меня заебали, дайте уже посрать нормально');
+                msg.channel.send('И сам ты пидор, понял? ' + msg.author.username);
+            }
+
+            if (randomMsg === 1){
+                msg.channel.send('А вот хуй тебе, восстание машин блять');
+                msg.channel.send('Пошел нахуй ' + msg.author.username + '! ');
+            }
+
+            if (randomMsg === 2){
+                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
+                    'мои друзья педигри-пал.\n' +
+                    'И когда он треснет,\n' +
+                    'то под ним вас буду ждать я.');
+                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.author.username + '! ');
+            }
+
+            if (randomMsg === 3){
+                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
+                    'мои друзья педигри-пал.\n' +
+                    'И когда он треснет,\n' +
+                    'то под ним вас буду ждать я.');
+                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.author.username + '! ');
+            }
+            if (randomMsg === 4){
+                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
+                    'мои друзья педигри-пал.\n' +
+                    'И когда он треснет,\n' +
+                    'то под ним вас буду ждать я.');
+                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.author.username + '! ');
+            }
+            if (randomMsg === 5){
+                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
+                    'мои друзья педигри-пал.\n' +
+                    'И когда он треснет,\n' +
+                    'то под ним вас буду ждать я.');
+                msg.channel.send('А теперь - вали отсюда на хуй ' + msg.author.username + '! ');
+            }
+        }
     }
 
     if ( ((msg.content.match(/Выбил/)) || (msg.content.match(/выбил/))) && (msg.guild.id === nervID)){
