@@ -191,7 +191,7 @@ robot.on('message', msg => {
 
         if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
             let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
-            msg.channel.send("Жаба покормленна - " + satiety + " раз(а)");
+            msg.channel.send("Жаба покормленна - " + satiety.lastMessage.content + " раз(а)");
         }
     }
 
