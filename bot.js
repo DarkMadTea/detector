@@ -7,7 +7,7 @@ let prefix = config.prefix;
 
 let nervID = "503098565485133834";
 let bratvaID = "311147386225295361";
-
+let countOfFeeds = 0; //сытость жабки
 
 robot.on('guildMemberAdd', (member) =>{
     if (member.guild.id === nervID){
@@ -177,6 +177,22 @@ robot.on('message', msg => {
 
     if (msg.content === 'Мариаза!') {
         msg.channel.send('Кнопкаa!');
+    }
+
+
+    let countOfFeedChannel = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
+    if (msg.guild.id === nervID){
+        if ( (msg.content === prefix + 'Покормить жабу') || (msg.content === prefix + 'Покорми жабу')) {
+            msg.channel.send('Вы успешно покормили жабу. \n' +
+                'Она получила +1 к сытости');
+            countOfFeeds++;
+            countOfFeedChannel.send(countOfFeeds);
+        }
+
+        if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
+            let satiety = msg.guild.channels.cache.get("807007209845424159").lastMessage.content;
+            msg.channel.send("Жаба покормленна - " + satiety + " раз(а)");
+        }
     }
 
     // if (msg.guild.id === bratvaID){
