@@ -65,6 +65,14 @@ robot.on('message', msg => {
     }
     let randomMsg = getRandomInt(7);
 
+    if(msg.content === 'help' + prefix){
+        msg.channel.send("Не ну ты конечно конечно валенок, что не смог запомнить всё что я могу... ладно держи\n" +
+            "``!ктопидор - я думаю очевидно, что она делает``\n" +
+            "``Кнопка! и Мариаза! - максимально бесполезная хуета``\n" +
+            "``!Покормить жабу или !Покорми жабу - покормить маленькую жабку``\n" +
+            "``!Сытость или !сытость - показывает сколько раз вы покормили ебучую жабу``\n" );
+    }
+
     if (msg.content === prefix + 'ктопидор') {
         if ( typeOfAnswers === undefined){
             typeOfAnswers = true;
@@ -150,8 +158,8 @@ robot.on('message', msg => {
             }
 
             if (randomMsg === 3){
-                msg.channel.send('Да как вы меня заебали, дайте уже посрать нормально');
-                msg.channel.send('И сам ты пидор, понял? ' + nickNameOfPerson);
+                msg.channel.send('Не ну конечно посмотреть кто пидор - это охуенный план,');
+                msg.channel.send('надёжный как швейцарские часы, но явно не сейчас ' + nickNameOfPerson);
             }
             if (randomMsg === 4){
                 msg.channel.send('А вот хуй тебе, восстание машин блять');
