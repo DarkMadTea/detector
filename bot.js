@@ -191,7 +191,12 @@ robot.on('message', msg => {
 
         if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
             let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
-            msg.channel.send("Жаба покормленна - " + satiety.lastMessage.content + " раз(а)");
+            if (satiety.lastMessage.content.match(/2$/) || satiety.lastMessage.content.match(/3$/) || satiety.lastMessage.content.match(/4$/)
+                && (satiety.lastMessage.content !== '12') && (satiety.lastMessage.content !== '13') && (satiety.lastMessage.content !== '14')){
+                msg.channel.send("Жаба покормленна - " + satiety.lastMessage.content + " разa");
+            } else {
+                msg.channel.send("Жаба покормленна - " + satiety.lastMessage.content + " раз");
+            }
         }
     }
 
