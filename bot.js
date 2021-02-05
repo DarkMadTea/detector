@@ -181,21 +181,24 @@ robot.on('message', msg => {
 
 
     let countOfFeedChannel = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
+    let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
+
+    let testedCount = Number(satiety.lastMessage.content);
+
     if (msg.guild.id === nervID){
         if ( (msg.content === prefix + 'Покормить жабу') || (msg.content === prefix + 'Покорми жабу')) {
             msg.channel.send('Вы успешно покормили жабу. \n' +
                 'Она получила +1 к сытости');
-            countOfFeeds++;
-            countOfFeedChannel.send(countOfFeeds);
-        }
+            testedCount++;
+            countOfFeedChannel.send(testedCount);
 
+        }
         if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
-            let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
             if (satiety.lastMessage.content.match(/2$/) || satiety.lastMessage.content.match(/3$/) || satiety.lastMessage.content.match(/4$/)
                 && (satiety.lastMessage.content !== '12') && (satiety.lastMessage.content !== '13') && (satiety.lastMessage.content !== '14')){
-                msg.channel.send("Жаба покормлена - " + satiety.lastMessage.content + " разa");
+                msg.channel.send("Жаба покормлена - " + testedCount + " разa");
             } else {
-                msg.channel.send("Жаба покормлена - " + satiety.lastMessage.content + " раз");
+                msg.channel.send("Жаба покормлена - " + testedCount + " раз");
             }
         }
     }
