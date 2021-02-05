@@ -7,7 +7,18 @@ let prefix = config.prefix;
 
 let nervID = "503098565485133834";
 let bratvaID = "311147386225295361";
-let countOfFeeds = 0; //сытость жабки
+
+robot.on('guildMemberAdd', (member) =>{
+    if (member.guild.id === nervID){
+        let mainChannel = robot.channels.cache.find(channel => channel.name === "центральная-догма");
+        mainChannel.send(`Welcome to the club, buddy ${member} :3`);
+        mainChannel.send('https://tenor.com/view/billy-herrington-gachi-hunk-smile-gif-12492957');
+        member.roles.add('662290251263377408');
+    }else {
+        console.log("s1 has been added to server " + member.guild.id);
+    }
+    console.log("The role has beed added to " + member);
+});
 
 let typeOfAnswers;
 
