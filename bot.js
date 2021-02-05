@@ -24,34 +24,6 @@ robot.on('guildMemberAdd', (member) =>{
 let typeOfAnswers;
 
 robot.on('message', msg => {
-
-    if (msg.channel.type === 'dm') {
-        if (msg.author.id === '365188528881008640') {
-            if (msg.content === 'help' ){
-                msg.channel.send(`
-                These are my supported commands:
-                
--**ктопидор** - включает бота как он и должен работать
--**нахуй** - посылает всех нахер)
-                `);
-            }
-            if(msg.content === 'ктопидор'){
-                typeOfAnswers = true;
-                msg.channel.send('Бот был переведен в обычный режим')
-            }
-            if(msg.content === 'нахуй'){
-                typeOfAnswers = false;
-                msg.channel.send('Бот был переведен в спец режим :3')
-            }
-        }
-        if ( (msg.author.id !== '365188528881008640') && (msg.author.id !== '792311287626465290') ){
-            msg.channel.send('Вали ка ты нахер, я тебя не знаю и знать не хочу\n' +
-                'Чтобы получить права на управление мною, обращайся к моему королю - Mad_Tea\n' +
-                'Найти его можно на сервере NERV.\n' +
-                'Если он выдаст тебе права - то милости просим).');
-        }
-    }
-
     robot.user.setPresence({
         status: 'online',
         activity: {
@@ -208,6 +180,33 @@ robot.on('message', msg => {
             } else {
                 msg.channel.send("Жаба покормлена - " + testedCount + " раз");
             }
+        }
+    }
+
+    if (msg.channel.type === 'dm') {
+        if (msg.author.id === '365188528881008640') {
+            if (msg.content === 'help' ){
+                msg.channel.send(`
+                These are my supported commands:
+                
+-**ктопидор** - включает бота как он и должен работать
+-**нахуй** - посылает всех нахер)
+                `);
+            }
+            if(msg.content === 'ктопидор'){
+                typeOfAnswers = true;
+                msg.channel.send('Бот был переведен в обычный режим')
+            }
+            if(msg.content === 'нахуй'){
+                typeOfAnswers = false;
+                msg.channel.send('Бот был переведен в спец режим :3')
+            }
+        }
+        if ( (msg.author.id !== '365188528881008640') && (msg.author.id !== '792311287626465290') ){
+            msg.channel.send('Вали ка ты нахер, я тебя не знаю и знать не хочу\n' +
+                'Чтобы получить права на управление мною, обращайся к моему королю - Mad_Tea\n' +
+                'Найти его можно на сервере NERV.\n' +
+                'Если он выдаст тебе права - то милости просим).');
         }
     }
 
