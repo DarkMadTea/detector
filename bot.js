@@ -9,26 +9,42 @@ let nervID = "503098565485133834";
 let bratvaID = "311147386225295361";
 let countOfFeeds = 0; //сытость жабки
 
-robot.on('guildMemberAdd', (member) =>{
-    if (member.guild.id === nervID){
-        let mainChannel = robot.channels.cache.find(channel => channel.name === "центральная-догма");
-        mainChannel.send(`Welcome to the club, buddy ${member} :3`);
-        mainChannel.send('https://tenor.com/view/billy-herrington-gachi-hunk-smile-gif-12492957');
-        member.roles.add('662290251263377408');
-    }else {
-        console.log("s1 has been added to server " + member.guild.id);
-    }
-    console.log("The role has beed added to " + member);
-});
-
 let typeOfAnswers;
 
 robot.on('message', msg => {
+
+    if (msg.channel.type === 'dm') {
+        if (msg.author.id === '365188528881008640') {
+            if (msg.content === 'help' ){
+                msg.channel.send(`
+                These are my supported commands:
+                
+-**ктопидор** - включает бота как он и должен работать
+-**нахуй** - посылает всех нахер)
+                `);
+            }
+            if(msg.content === 'ктопидор'){
+                typeOfAnswers = true;
+                msg.channel.send('Бот был переведен в обычный режим')
+            }
+            if(msg.content === 'нахуй'){
+                typeOfAnswers = false;
+                msg.channel.send('Бот был переведен в спец режим :3')
+            }
+        }
+        if ( (msg.author.id !== '365188528881008640') && (msg.author.id !== '792311287626465290') ){
+            msg.channel.send('Вали ка ты нахер, я тебя не знаю и знать не хочу\n' +
+                'Чтобы получить права на управление мною, обращайся к моему королю - Mad_Tea\n' +
+                'Найти его можно на сервере NERV.\n' +
+                'Если он выдаст тебе права - то милости просим).');
+        }
+    }
+
     robot.user.setPresence({
         status: 'online',
         activity: {
             type: 'WATCHING',
-            name: 'кто тут пидор (help!)',
+            name: 'кто тут пидор',
         },
     });
 
@@ -159,54 +175,22 @@ robot.on('message', msg => {
         msg.channel.send('Кнопкаa!');
     }
 
-
     let countOfFeedChannel = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
     let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
-
     let testedCount = Number(satiety.lastMessage.content);
 
-    if (msg.guild.id === nervID){
-        if ( (msg.content === prefix + 'Покормить жабу') || (msg.content === prefix + 'Покорми жабу')) {
-            msg.channel.send('Вы успешно покормили жабу. \n' +
-                'Она получила +1 к сытости');
-            testedCount++;
-            countOfFeedChannel.send(testedCount);
-
-        }
-        if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
-            if (satiety.lastMessage.content.match(/2$/) || satiety.lastMessage.content.match(/3$/) || satiety.lastMessage.content.match(/4$/)
-                && (satiety.lastMessage.content !== '12') && (satiety.lastMessage.content !== '13') && (satiety.lastMessage.content !== '14')){
-                msg.channel.send("Жаба покормлена - " + testedCount + " разa");
-            } else {
-                msg.channel.send("Жаба покормлена - " + testedCount + " раз");
-            }
-        }
+    if ( (msg.content === prefix + 'Покормить жабу') || (msg.content === prefix + 'Покорми жабу')) {
+        msg.channel.send('Вы успешно покормили жабу. \n' +
+            'Она получила +1 к сытости');
+        testedCount++;
+        countOfFeedChannel.send(testedCount);
     }
-
-    if (msg.channel.type === 'dm') {
-        if (msg.author.id === '365188528881008640') {
-            if (msg.content === 'help' ){
-                msg.channel.send(`
-                These are my supported commands:
-                
--**ктопидор** - включает бота как он и должен работать
--**нахуй** - посылает всех нахер)
-                `);
-            }
-            if(msg.content === 'ктопидор'){
-                typeOfAnswers = true;
-                msg.channel.send('Бот был переведен в обычный режим')
-            }
-            if(msg.content === 'нахуй'){
-                typeOfAnswers = false;
-                msg.channel.send('Бот был переведен в спец режим :3')
-            }
-        }
-        if ( (msg.author.id !== '365188528881008640') && (msg.author.id !== '792311287626465290') ){
-            msg.channel.send('Вали ка ты нахер, я тебя не знаю и знать не хочу\n' +
-                'Чтобы получить права на управление мною, обращайся к моему королю - Mad_Tea\n' +
-                'Найти его можно на сервере NERV.\n' +
-                'Если он выдаст тебе права - то милости просим).');
+    if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
+        if (satiety.lastMessage.content.match(/2$/) || satiety.lastMessage.content.match(/3$/) || satiety.lastMessage.content.match(/4$/)
+            && (satiety.lastMessage.content !== '12') && (satiety.lastMessage.content !== '13') && (satiety.lastMessage.content !== '14')){
+            msg.channel.send("Жаба покормлена - " + testedCount + " разa");
+        } else {
+            msg.channel.send("Жаба покормлена - " + testedCount + " раз");
         }
     }
 
