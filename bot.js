@@ -56,7 +56,7 @@ robot.on('message', msg => {
         status: 'online',
         activity: {
             type: 'WATCHING',
-            name: 'кто тут пидор',
+            name: 'кто тут пидор (help!)',
         },
     });
 
