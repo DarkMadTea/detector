@@ -178,6 +178,15 @@ robot.on('message', msg => {
         msg.channel.send('https://tenor.com/view/stocks-only-go-up-sogu-hulk-penis-stonks-v-shape-recovery-gif-18971989');
     }
 
+    if (msg.content === prefix + 'bibametr'){
+        let nickNameOfPerson = msg.member.nickname;
+        if (msg.member.nickname === null) {
+            nickNameOfPerson = msg.author.username;
+        }
+        let bibaLength = Math.floor(Math.random() * 30) + 5;
+        msg.channel.send(nickNameOfPerson + ' биба ' + bibaLength + ' см');
+    }
+
     if (msg.content === 'Кнопка!') {
         msg.channel.send('Мариаааза!');
     }
