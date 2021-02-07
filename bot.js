@@ -229,11 +229,13 @@ robot.on('message', msg => {
             || (msg.content.match(/right/))
             || (msg.content.match(/version/))
             || (msg.content.match(/гачи/))){
-        setTimeout(function () {
-            msg.channel.send('YES, SIR');
-            msg.channel.send('Let the cum begins!');
-            msg.channel.send('https://tenor.com/view/gachi-gachi-hyper-gif-15959866');
-        }, 1000);
+        if (msg.guild.id === nervID){
+            setTimeout(function () {
+                msg.channel.send('YES, SIR');
+                msg.channel.send('Let the cum begins!');
+                msg.channel.send('https://tenor.com/view/gachi-gachi-hyper-gif-15959866');
+            }, 1000);
+        }
     }
 });
 
