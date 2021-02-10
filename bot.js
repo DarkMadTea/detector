@@ -62,7 +62,6 @@ robot.on('message', msg => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
-    let randomMsg = getRandomInt(7);
 
     if(msg.content === 'help' + prefix){
         msg.channel.send("Не ну ты конечно конечно валенок, что не смог запомнить всё что я могу... ладно держи\n" +
@@ -86,7 +85,9 @@ robot.on('message', msg => {
                     let array = [];
                     array = response.data.split("\n");
                     let item = array[Math.floor(Math.random()*array.length)];
-                    
+
+                    let randomMsg = getRandomInt(7);
+
                     if (randomMsg === 0){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                         msg.channel.send('Ведется поиск в базе данных');
@@ -138,6 +139,8 @@ robot.on('message', msg => {
                 nickNameOfPerson = msg.author.username;
             }
 
+            let randomMsg = getRandomInt(7);
+
             if (randomMsg === 0){
                 msg.channel.send('Да как вы меня заебали, дайте уже посрать нормально');
                 msg.channel.send('И сам ты пидор, понял? ' + nickNameOfPerson);
@@ -149,10 +152,10 @@ robot.on('message', msg => {
             }
 
             if (randomMsg === 2){
-                msg.channel.send('Ты ходишь по охуенно тонком льду,\n' +
-                    'мои друзья педигри-пал.\n' +
+                msg.channel.send('Ты ходишь по охуенно тонкому льду,\n' +
+                    'мой друг.\n' +
                     'И когда он треснет,\n' +
-                    'то под ним вас буду ждать я.');
+                    'то под ним тебя буду ждать я.');
                 msg.channel.send('А теперь - вали отсюда на хуй ' + nickNameOfPerson + '! ');
             }
 
