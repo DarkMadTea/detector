@@ -71,10 +71,11 @@ robot.on('message', msg => {
             "``!Сытость или !сытость - показывает сколько раз вы покормили ебучую жабу``\n" );
     }
 
+    if ( typeOfAnswers === undefined){
+        typeOfAnswers = true;
+    }
+
     if (msg.content === prefix + 'ктопидор') {
-        if ( typeOfAnswers === undefined){
-            typeOfAnswers = true;
-        }
         let usersOfServer = 'users.txt';
         if (msg.guild.id === bratvaID){
             usersOfServer = 'users1.txt'
@@ -175,9 +176,6 @@ robot.on('message', msg => {
     }
 
     if (msg.content === prefix + 'bibametr'){
-        if ( typeOfAnswers === undefined){
-            typeOfAnswers = true;
-        }
         if ( typeOfAnswers === true){
             let nickNameOfPerson = msg.member.nickname;
             if (msg.member.nickname === null) {
@@ -211,9 +209,6 @@ robot.on('message', msg => {
     }
 
     if (msg.content === 'Кнопка!') {
-        if ( typeOfAnswers === undefined){
-            typeOfAnswers = true;
-        }
         if ( typeOfAnswers === true){
             msg.channel.send('Мариаааза!');
         }
