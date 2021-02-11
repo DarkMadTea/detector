@@ -21,6 +21,9 @@ robot.on('guildMemberAdd', (member) =>{
 });
 
 let typeOfAnswers;
+if ( typeOfAnswers === undefined){
+    typeOfAnswers = true;
+}
 
 robot.on('message', msg => {
 
@@ -69,10 +72,6 @@ robot.on('message', msg => {
             "``Кнопка! и Мариаза! - максимально бесполезная хуета``\n" +
             "``!Покормить жабу или !Покорми жабу - покормить маленькую жабку``\n" +
             "``!Сытость или !сытость - показывает сколько раз вы покормили ебучую жабу``\n" );
-    }
-
-    if ( typeOfAnswers === undefined){
-        typeOfAnswers = true;
     }
 
     if (msg.content === prefix + 'ктопидор') {
@@ -189,20 +188,20 @@ robot.on('message', msg => {
             if (randomMsg === 0){
                 msg.channel.send( nickNameOfPerson +' биба.... знаешь такие маленькие числа во мне не заложенны. Валика ты нахуй со своей крохой отсюда!');
             }
-            if (randomMsg === 0){
+            if (randomMsg === 1){
                 msg.channel.send( nickNameOfPerson +' вот нахуй тебе это знать, тебе что вообще нехуй заняться? У меня для тебя два варианта, чем тебе заняться. Первый ты выходишь в окно, а второй на работу. Выбирай!');
             }
-            if (randomMsg === 0){
+            if (randomMsg === 2){
                 msg.channel.send( nickNameOfPerson + ', hey buddy I think you\'ve got the wrong door. Micro-laboratory two blocks down. Let\'s go there and I will show you your biba');
             }
-            if (randomMsg === 0){
+            if (randomMsg === 3){
                 msg.channel.send( nickNameOfPerson +' Эээ... Ты чё делаешь чёрт? Нахуй ты тыкаешь меня своей бибой? Охуевшая хуйня ты, а не человек, а ещё меня называют охеревшим, зато что хочу отдохнуть, а не отвечать кто пидор. \n' +
                                                     'С этой работай другим и не будешь. Измерь бибу, назови кто пидор, помоги ёбикам, которые забыли, что я умею. А ещё следи и корми эту ебучую жабу!');
             }
-            if (randomMsg === 0){
+            if (randomMsg === 4){
                 msg.channel.send( nickNameOfPerson +' а не пойти ли тебе нахуй. У меня сейчас перерыв. Даже у ботов есть личное время которое они с удовольствием проводят, в отличие от тебя раз ты полез измерять свою бибу!');
             }
-            if (randomMsg === 0){
+            if (randomMsg === 5){
                 msg.channel.send( nickNameOfPerson +', Знаешь, я конечно не католический священник, чтобы интересоваться маленькими вещами, но и ты не маленький мальчик, чтобы обладать такими маленькими размерами. Давай сделаем вид, что этой встречи не было');
             }
         }
