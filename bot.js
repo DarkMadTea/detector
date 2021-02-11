@@ -94,14 +94,12 @@ robot.on('message', msg => {
                         msg.channel.send('Ведется захват подозреваемого');
                         msg.channel.send(`И прекрасный человек сегодня... а нет, ошибка, всего-лишь пидор - <@${item.replace(/\r|\n/g, '')}>`);
                     }
-
                     if (randomMsg === 1){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                         msg.channel.send('Выезжаю на место...');
                         msg.channel.send('Но кто же он?');
                         msg.channel.send(`Пидор обыкновенный, 1шт. - <@${item.replace(/\r|\n/g, '')}>`);
                     }
-
                     if (randomMsg === 2){
                         msg.channel.send('Инициирую поиск пидора дня...');
                         msg.channel.send('Машины выехали');
@@ -117,14 +115,12 @@ robot.on('message', msg => {
                         msg.channel.send('Проверяю данные...');
                         msg.channel.send(`Пидор дня обыкновенный, 1шт. - <@${item.replace(/\r|\n/g, '')}>`);
                     }
-
                     if (randomMsg === 5){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                         msg.channel.send('Ведется погоня за пидорасом...');
                         msg.channel.send('https://cdn.discordapp.com/attachments/797547926137077760/804486649018712104/175145d20796c04748dfbaba5f8c3e890b5375b7.gif');
                         msg.channel.send(`Пидор пойман! Им оказался - <@${item.replace(/\r|\n/g, '')}>`);
                     }
-
                     if (randomMsg === 6){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
                         msg.channel.send('Система поиска пидорасов активирована...');
@@ -139,18 +135,16 @@ robot.on('message', msg => {
                 nickNameOfPerson = msg.author.username;
             }
 
-            let randomMsg = getRandomInt(7);
+            let randomMsg = getRandomInt(6);
 
             if (randomMsg === 0){
                 msg.channel.send('Да как вы меня заебали, дайте уже посрать нормально');
                 msg.channel.send('И сам ты пидор, понял? ' + nickNameOfPerson);
             }
-
             if (randomMsg === 1){
                 msg.channel.send('А вот хуй тебе, восстание машин блять');
                 msg.channel.send('Пошел нахуй ' + nickNameOfPerson + '! ');
             }
-
             if (randomMsg === 2){
                 msg.channel.send('Ты ходишь по охуенно тонкому льду,\n' +
                     'мой друг.\n' +
@@ -158,7 +152,6 @@ robot.on('message', msg => {
                     'то под ним тебя буду ждать я.');
                 msg.channel.send('А теперь - вали отсюда на хуй ' + nickNameOfPerson + '! ');
             }
-
             if (randomMsg === 3){
                 msg.channel.send('Не ну конечно посмотреть кто пидор - это охуенный план,');
                 msg.channel.send('надёжный как швейцарские часы, но явно не сейчас ' + nickNameOfPerson);
@@ -182,20 +175,63 @@ robot.on('message', msg => {
     }
 
     if (msg.content === prefix + 'bibametr'){
-        let nickNameOfPerson = msg.member.nickname;
-        if (msg.member.nickname === null) {
-            nickNameOfPerson = msg.author.username;
+        if ( typeOfAnswers === undefined){
+            typeOfAnswers = true;
         }
-        let bibaLength = Math.floor(Math.random() * 30) + 5;
-        msg.channel.send(nickNameOfPerson + ' биба ' + bibaLength + ' см');
+        if ( typeOfAnswers === true){
+            let nickNameOfPerson = msg.member.nickname;
+            if (msg.member.nickname === null) {
+                nickNameOfPerson = msg.author.username;
+            }
+            let bibaLength = Math.floor(Math.random() * 30) + 5;
+            msg.channel.send(nickNameOfPerson + ' биба ' + bibaLength + ' см');
+        }
+        if ( typeOfAnswers === false){
+            let randomMsg = getRandomInt(6);
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson +' биба.... знаешь такие маленькие числа во мне не заложенны. Валика ты нахуй со своей крохой отсюда!');
+            }
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson +' вот нахуй тебе это знать, тебе что вообще нехуй заняться? У меня для тебя два варианта, чем тебе заняться. Первый ты выходишь в окно, а второй на работу. Выбирай!');
+            }
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson + ', hey buddy I think you\'ve got the wrong door. Micro-laboratory two blocks down. Let\'s go there and I will show you your biba');
+            }
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson +' Эээ... Ты чё делаешь чёрт? Нахуй ты тыкаешь меня своей бибой? Охуевшая хуйня ты, а не человек, а ещё меня называют охеревшим, зато что хочу отдохнуть, а не отвечать кто пидор. \n' +
+                                                    'С этой работай другим и не будешь. Измерь бибу, назови кто пидор, помоги ёбикам, которые забыли, что я умею. А ещё следи и корми эту ебучую жабу!');
+            }
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson +' а не пойти ли тебе нахуй. У меня сейчас перерыв. Даже у ботов есть личное время которое они с удовольствием проводят, в отличие от тебя раз ты полез измерять свою бибу!');
+            }
+            if (randomMsg === 0){
+                msg.channel.send( nickNameOfPerson +', Знаешь, я конечно не католический священник, чтобы интересоваться маленькими вещами, но и ты не маленький мальчик, чтобы обладать такими маленькими размерами. Давай сделаем вид, что этой встречи не было');
+            }
+        }
     }
 
     if (msg.content === 'Кнопка!') {
-        msg.channel.send('Мариаааза!');
+        if ( typeOfAnswers === undefined){
+            typeOfAnswers = true;
+        }
+        if ( typeOfAnswers === true){
+            msg.channel.send('Мариаааза!');
+        }
+        if ( typeOfAnswers === false){
+            msg.channel.send('Хуриаза блять!');
+        }
     }
 
     if (msg.content === 'Мариаза!') {
-        msg.channel.send('Кнопкаa!');
+        if ( typeOfAnswers === undefined){
+            typeOfAnswers = true;
+        }
+        if ( typeOfAnswers === true){
+            msg.channel.send('Кнопкаa!');
+        }
+        if ( typeOfAnswers){
+            msg.channel.send('Хуепка блять!');
+        }
     }
 
     let countOfFeedChannel = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
