@@ -86,7 +86,7 @@ robot.on('message', msg => {
                     array = response.data.split("\n");
                     let item = array[Math.floor(Math.random()*array.length)];
 
-                    let randomMsg = getRandomInt(7);
+                    let randomMsg = getRandomInt(8);
 
                     if (randomMsg === 0){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
@@ -126,6 +126,12 @@ robot.on('message', msg => {
                         msg.channel.send('Система поиска пидорасов активирована...');
                         msg.channel.send(`<@${item.replace(/\r|\n/g, '')}>,`);
                         msg.channel.send('https://tenor.com/view/56324%D0%BF%D0%BA-cat-rest-chill-gif-15911415');
+                    }
+                    if (randomMsg === 7){
+                        msg.channel.send('Что тут у нас?');
+                        msg.channel.send('Военный спутник запущен, коды доступа внутри...');
+                        msg.channel.send('Не может быть!');
+                        msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>`);
                     }
                 });
         }
