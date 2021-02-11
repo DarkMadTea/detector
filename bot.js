@@ -175,11 +175,11 @@ robot.on('message', msg => {
     }
 
     if (msg.content === prefix + 'bibametr'){
+        let nickNameOfPerson = msg.member.nickname;
+        if (msg.member.nickname === null) {
+            nickNameOfPerson = msg.author.username;
+        }
         if ( typeOfAnswers === true){
-            let nickNameOfPerson = msg.member.nickname;
-            if (msg.member.nickname === null) {
-                nickNameOfPerson = msg.author.username;
-            }
             let bibaLength = Math.floor(Math.random() * 30) + 5;
             msg.channel.send(nickNameOfPerson + ' биба ' + bibaLength + ' см');
         }
