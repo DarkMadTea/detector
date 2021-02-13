@@ -223,13 +223,10 @@ robot.on('message', msg => {
     }
 
     if (msg.content === 'Мариаза!') {
-        if ( typeOfAnswers === undefined){
-            typeOfAnswers = true;
-        }
         if ( typeOfAnswers === true){
             msg.channel.send('Кнопкаa!');
         }
-        if ( typeOfAnswers){
+        if ( typeOfAnswers === false){
             msg.channel.send('Хуепка блять!');
         }
     }
