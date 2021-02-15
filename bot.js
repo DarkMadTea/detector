@@ -235,13 +235,13 @@ robot.on('message', msg => {
     let satiety = robot.channels.cache.find(channel => channel.name === "count_of_feeds");
     let testedCount = Number(satiety.lastMessage.content);
 
-    if ( (msg.content === prefix + 'Покормить жабу') || (msg.content === prefix + 'Покорми жабу')) {
+    if ( (msg.content === prefix + msg.content.match(/Покорми жабу/i)) || (msg.content === prefix + msg.content.match(/Покормить жабу/i)) ) {
         msg.channel.send('Вы успешно покормили жабу. \n' +
             'Она получила +1 к сытости');
         testedCount++;
         countOfFeedChannel.send(testedCount);
     }
-    if ( (msg.content === prefix + 'Сытость') || (msg.content === prefix + 'сытость')){
+    if ( (msg.content === prefix + msg.content.match(/сытость/i)) ){
         if (satiety.lastMessage.content.match(/2$/) || satiety.lastMessage.content.match(/3$/) || satiety.lastMessage.content.match(/4$/)
             && (satiety.lastMessage.content !== '12') && (satiety.lastMessage.content !== '13') && (satiety.lastMessage.content !== '14')){
             msg.channel.send("Жаба покормлена - " + testedCount + " разa");
