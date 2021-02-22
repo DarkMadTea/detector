@@ -86,7 +86,7 @@ robot.on('message', msg => {
                     array = response.data.split("\n");
                     let item = array[Math.floor(Math.random()*array.length)];
 
-                    let randomMsg = getRandomInt(8);
+                    let randomMsg = getRandomInt(9);
 
                     if (randomMsg === 0){
                         msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
@@ -132,6 +132,12 @@ robot.on('message', msg => {
                         msg.channel.send('Военный спутник запущен, коды доступа внутри...');
                         msg.channel.send('Не может быть!');
                         msg.channel.send(`Вот ты и пидор, <@${item.replace(/\r|\n/g, '')}>`);
+                    }
+                    if (randomMsg === 8){
+                        msg.channel.send('Woob-woob, that\'s da sound of da pidor-police!');
+                        msg.channel.send('Выезжаю на место...');
+                        msg.channel.send('Но кто же он?');
+                        msg.channel.send(`ВЖУХ И ТЫ ПИДОР, <@${item.replace(/\r|\n/g, '')}>`);
                     }
                 });
         }
