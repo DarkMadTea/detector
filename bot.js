@@ -228,6 +228,11 @@ robot.on('message', msg => {
         }
     }
 
+    if (msg.content === prefix + 'roll') {
+        let rolled = Math.floor(Math.random() * 100);
+        msg.channel.send('Ролл: ' + rolled);
+    }
+
     if (msg.content === 'Мариаза!') {
         if ( typeOfAnswers === true){
             msg.channel.send('Кнопкаa!');
